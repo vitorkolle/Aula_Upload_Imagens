@@ -1,7 +1,7 @@
 import mysql from 'mysql2/promise'
 import 'dotenv/config'
 
-export const pool = await mysql.createPool({
+const pool = await mysql.createPool({
   host: process.env.MYSQL_HOST,
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
@@ -9,3 +9,5 @@ export const pool = await mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10
 })
+
+export default pool
